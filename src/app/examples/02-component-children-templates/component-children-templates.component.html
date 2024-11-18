@@ -1,0 +1,28 @@
+<a [routerLink]="'/'">Home</a>
+<br/>
+
+<div title="View Children as Templates">
+  <h3>02 - View Children as Templates</h3>
+  <p>This uses view children to get the direct decendants as components instances.</p>
+  <pre>{{code_example}}</pre>
+  <app-show-child-details
+    [viewChildren]="viewChildren()"
+    [viewChildrenTemplates]="viewChildrenTemplates()"
+    [contentChildren]="contentChildren()"
+    [contentChildrenDescendants]="contentChildrenDescendants()">
+  </app-show-child-details>
+  <br/>
+  <app-child-basics *appChildBasics="" [theCount]="4"/>
+  <app-child-basics *appChildBasics="" [theCount]="5"/>
+
+  <ng-template [appChildBasics]="">
+    <app-child-basics [theCount]="6"/>
+  </ng-template>
+
+  @for(template of viewChildrenTemplates(); track $index)
+  {
+    <ng-container *ngTemplateOutlet="template" />
+  }
+  <br/>
+  <br/>
+</div>

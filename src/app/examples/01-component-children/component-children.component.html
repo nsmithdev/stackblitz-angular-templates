@@ -1,0 +1,21 @@
+<a [routerLink]="'/'">Home</a>
+<br/>
+
+<div title="View Children as Componeents">
+  <h3>01 - View Children as Componeents</h3>
+  <p>This uses view children to get the direct decendants as components instances.</p>
+  <pre>{{code_example}}</pre>
+  <app-show-child-details
+    [viewChildren]="viewChildren()"
+    [viewChildrenTemplates]="viewChildrenTemplates()"
+    [contentChildren]="contentChildren()"
+    [contentChildrenDescendants]="contentChildrenDescendants()">
+  </app-show-child-details>
+  <br/>
+  <app-child-basics [theCount]="1"/>
+  <app-child-basics [theCount]="2"/>
+  <app-child-basics [theCount]="3"/>
+  <br/>
+  <br/>
+  <br />
+</div>

@@ -1,0 +1,31 @@
+<a [routerLink]="'/'">Home</a>
+<br/>
+
+<div title="Child with Template Inside">
+<h3>04 - Child with Template Inside</h3>
+
+<app-show-child-details
+  [viewChildren]="viewChildren()"
+  [viewChildrenTemplates]="viewChildrenTemplates()"
+  [contentChildren]="contentChildren()"
+  [contentChildrenDescendants]="contentChildrenDescendants()">
+</app-show-child-details>
+<br/>
+
+@if (childWithTemplate.viewChild(); as template99) {
+  <div style="padding: 7px; border: 1px solid blue;">
+    <div>Child Template shown from parrent</div>
+    <ng-container *ngTemplateOutlet="$any(template99)"/>
+  </div>
+  <br/>
+}
+<app-child-with-template #childWithTemplate>
+<app-child-basics [theCount]="30"/>
+<app-child-basics [theCount]="31"/>
+
+<app-child-with-template>  
+    <app-child-basics [theCount]="32"/>
+    <app-child-basics [theCount]="33"/>
+  </app-child-with-template>
+</app-child-with-template>
+<br/>

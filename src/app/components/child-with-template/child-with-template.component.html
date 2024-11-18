@@ -1,0 +1,15 @@
+<ng-template #columnTemplate let-row>
+  <p>child-with-template works! 12341234 (columnTemplate)</p>
+  <ng-content></ng-content>
+</ng-template>
+
+<div style="padding: 7px; border: 1px solid red;">
+  @if(viewChild(); as template99) {
+    Child Template show from child
+    <ng-container *ngTemplateOutlet="$any(template99)" />
+  } 
+  @if(contentChild()) {
+    Content Child Template Found
+    <br/>
+  }
+</div>

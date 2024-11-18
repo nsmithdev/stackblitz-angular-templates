@@ -1,0 +1,21 @@
+<a [routerLink]="'/'">Home</a>
+<br/>
+
+<div title="Child with child components">
+  <h3>03 - Child with child components</h3>
+  
+  <app-show-child-details
+    [viewChildren]="viewChildren()"
+    [viewChildrenTemplates]="viewChildrenTemplates()"
+    [contentChildren]="contentChildren()"
+    [contentChildrenDescendants]="contentChildrenDescendants()">
+  </app-show-child-details>
+  <br/>
+
+  <app-child-with-content-children>
+    adsdasdasd
+    <app-child-basics [theCount]="20"/>
+    <app-child-basics [theCount]="21"/>
+  </app-child-with-content-children>
+  <br />
+</div>
